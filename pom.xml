@@ -31,7 +31,7 @@
         <dependency>
             <groupId>org.xerial</groupId>
             <artifactId>sqlite-jdbc</artifactId>
-            <version>3.36.0.3</version>
+            <version>3.41.2.2</version>
         </dependency>
 
         <!-- JUnit dependency for testing -->
@@ -42,4 +42,12 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <!-- BCrypt -->
+    <dependencies>
+        <dependency>
+            <groupId>org.mindrot</groupId>
+            <artifactId>jbcrypt</artifactId>
+            <version>0.4</version>
+        </dependency>
 </project>
