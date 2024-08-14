@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
 
-<GridPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
-    <Label text="Welcome to Personal Finance Management" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-    <Label text="Enter transaction details below:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-    <Label text="Item:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-    <TextField fx:id="itemField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-    <Label text="Price:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
-    <TextField fx:id="priceField" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
-    <Button text="Add Transaction" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
-</GridPane>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="main.java.PersoFI.controller.MainController">
+    <top>
+        <MenuBar>
+            <Menu text="File">
+                <MenuItem text="Exit" onAction="#handleExit"/>
+            </Menu>
+            <Menu text="Transactions">
+                <MenuItem text="Add Transaction" onAction="#handleAddTransaction"/>
+                <MenuItem text="View Transactions" onAction="#handleViewTransactions"/>
+            </Menu>
+            <Menu text="Budget">
+                <MenuItem text="Set Budget" onAction="#handleSetBudget"/>
+                <MenuItem text="View Budget" onAction="#handleViewBudget"/>
+            </Menu>
+            <Menu text="Reports">
+                <MenuItem text="Generate Report" onAction="#handleGenerateReport"/>
+            </Menu>
+        </MenuBar>
+    </top>
+    <!-- Add more UI components here -->
+</BorderPane>
