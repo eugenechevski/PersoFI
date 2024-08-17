@@ -3,6 +3,7 @@ module PersoFI {
     exports PersoFI.controller;
     exports PersoFI.model;
     exports PersoFI.util;
+    exports PersoFI.dao;
 
     requires java.sql;
     requires javafx.base;

@@ -5,6 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 public class TransactionTest {
 
@@ -13,26 +14,23 @@ public class TransactionTest {
     private final double amount = 100.00;
     private final String category = "Groceries";
     private final String description = "Weekly shopping";
+    private final Transaction.TransactionType type = Transaction.TransactionType.EXPENSE;
 
     @Before
     public void setUp() {
-        transaction = new Transaction(date, amount, category, description);
+        transaction = new Transaction(date, amount, category, description, type);
     }
 
     @Test
     public void testTransactionCreation() {
         assertNotNull(transaction);
+        assertNotNull(transaction.getId());
+        assertTrue(transaction.getId() instanceof UUID);
         assertEquals(date, transaction.getDate());
         assertEquals(amount, transaction.getAmount(), 0.001);
         assertEquals(category, transaction.getCategory());
         assertEquals(description, transaction.getDescription());
-    }
-
-    @Test
-    public void testSetId() {
-        int id = 1;
-        transaction.setId(id);
-        assertEquals(id, transaction.getId());
+        assertEquals(type, transaction.getType());
     }
 
     @Test
@@ -61,5 +59,32 @@ public class TransactionTest {
         String newDescription = "Movie night";
         transaction.setDescription(newDescription);
         assertEquals(newDescription, transaction.getDescription());
+    }
+
+    @Test
+    public void testSetType() {
+        Transaction.TransactionType newType = Transaction.TransactionType.INCOME;
+        transaction.setType(newType);
+        assertEquals(newType, transaction.getType());
+    }
+
+    @Test
+    public void testToString() {
+        String expectedString = "Transaction{" +
+                "id=" + transaction.getId() +
+                ", date=" + date +
+                ", amount=" + amount +
+                ", category='" + category + '\'' +
+                ", description='" + description + '\'' +
+                ", type=" + type +
+                '}';
+        assertEquals(expectedString, transaction.toString());
+    }
+
+    @Test
+    public void testTransactionTypeEnum() {
+        assertEquals(2, Transaction.TransactionType.values().length);
+        assertEquals(Transaction.TransactionType.INCOME, Transaction.TransactionType.valueOf("INCOME"));
+        assertEquals(Transaction.TransactionType.EXPENSE, Transaction.TransactionType.valueOf("EXPENSE"));
     }
 }

@@ -1,24 +1,31 @@
 package PersoFI.model;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 public class Transaction {
-    private int id;
+    private UUID id;
     private LocalDate date;
     private double amount;
     private String category;
     private String description;
+    private TransactionType type;
 
-    public Transaction(LocalDate date, double amount, String category, String description) {
+    public enum TransactionType {
+        INCOME, EXPENSE
+    }
+
+    public Transaction(LocalDate date, double amount, String category, String description, TransactionType type) {
+        this.id = UUID.randomUUID();
         this.date = date;
         this.amount = amount;
         this.category = category;
         this.description = description;
+        this.type = type;
     }
 
     // Getters and setters
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public UUID getId() { return id; }
     public LocalDate getDate() { return date; }
     public void setDate(LocalDate date) { this.date = date; }
     public double getAmount() { return amount; }
@@ -27,6 +34,8 @@ public class Transaction {
     public void setCategory(String category) { this.category = category; }
     public String getDescription() { return description; }
     public void setDescription(String description) { this.description = description; }
+    public TransactionType getType() { return type; }
+    public void setType(TransactionType type) { this.type = type; }
 
     @Override
     public String toString() {
@@ -36,6 +45,7 @@ public class Transaction {
                ", amount=" + amount +
                ", category='" + category + '\'' +
                ", description='" + description + '\'' +
+               ", type=" + type +
                '}';
     }
 }

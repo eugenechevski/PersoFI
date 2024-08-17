@@ -4,6 +4,10 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
 
 <BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="PersoFI.controller.MainController">
     <top>
@@ -24,5 +28,17 @@
             </Menu>
         </MenuBar>
     </top>
-    <!-- Add more UI components here -->
+    <center>
+        <GridPane alignment="CENTER" hgap="10" vgap="10">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            <DatePicker fx:id="datePicker" promptText="Date" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="amountField" promptText="Amount" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="categoryField" promptText="Category" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="descriptionField" promptText="Description" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="typeComboBox" promptText="Transaction Type" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <Button text="Add Transaction" onAction="#handleAddTransaction" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        </GridPane>
+    </center>
 </BorderPane>
