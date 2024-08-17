@@ -6,8 +6,6 @@ import static org.junit.Assert.*;
 
 import java.time.LocalDate;
 
-import main.java.PersoFI.model.Transaction;
-
 public class TransactionTest {
 
     private Transaction transaction;

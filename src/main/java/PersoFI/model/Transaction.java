@@ -1,4 +1,4 @@
-package main.java.PersoFI.model;
+package PersoFI.model;
 
 import java.time.LocalDate;
 

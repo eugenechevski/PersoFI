@@ -1,6 +1,4 @@
-package test.java.PersoFI.util;
-
-import main.java.PersoFI.util.DatabaseUtil;
+package PersoFI.util;
 
 import org.junit.After;
 import org.junit.Before;

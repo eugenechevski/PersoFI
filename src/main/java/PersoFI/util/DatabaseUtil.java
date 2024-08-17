@@ -1,4 +1,4 @@
-package main.java.PersoFI.util;
+package PersoFI.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
