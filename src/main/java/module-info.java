@@ -10,6 +10,12 @@ module PersoFI {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.graphics;
+    requires javafx.web;
+    requires org.controlsfx.controls;
+    requires org.kordamp.ikonli.javafx;
+    requires AnimateFX;
+    requires com.jfoenix;
+
 
     opens PersoFI to javafx.fxml;
     opens PersoFI.controller to javafx.fxml;
