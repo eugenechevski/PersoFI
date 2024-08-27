@@ -14,10 +14,6 @@ public class Transaction {
     private final ObjectProperty<Account> account;
     private final ObjectProperty<Category> category;
 
-    public enum TransactionType {
-        INCOME, EXPENSE
-    }
-
     public Transaction(UUID id, LocalDate date, double amount, String description, TransactionType type,
             Account account, Category category) {
         this.id = new SimpleObjectProperty<>(id);
