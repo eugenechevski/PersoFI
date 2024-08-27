@@ -7,8 +7,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.collections.FXCollections;
+ 
 
 import java.sql.SQLException;
 import java.time.LocalDate;
